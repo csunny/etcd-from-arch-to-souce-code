@@ -13,7 +13,7 @@
         * [一致性问题](introduce/storage/consistency.md)
         * [共识算法](introduce/storage/consensus_algorithm.md)
         * [Raft协议](introduce/storage/raft.md)
-        * [ACID](introduce/storage/acid.md)
+        * [事务ACID](introduce/storage/acid.md)
         * [分布式事务](introduce/storage/transation.md)
         * [并发控制](introduce/storage/mvcc.md)
     * [小结](introduce/summary.md)
