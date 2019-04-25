@@ -1,6 +1,6 @@
 # Table of contents
 
-* [简介](README.md)
+* [前言](README.md)
 
 * [分布式系统介绍](introduce/README.md)
     * [CAP理论](introduce/cap.md)
