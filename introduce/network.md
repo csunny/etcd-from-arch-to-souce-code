@@ -13,7 +13,7 @@
 
 #### ISO OSI Protocol
 尽管OSI(Open Systems Interconnect)协议并没有完整实现，但OSI协议已经是事实上的通信标准协议。 
-![](\_asserts\images\osi_protocol.jpg)
+![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/osi_protocol.jpg)
 
 #### OSI层
 每一层的功能分别如下：
@@ -25,7 +25,7 @@
 
 #### TCP/IP 协议
 
-![](\_asserts\images\tcp_ip.jpg)
+![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/tcp_ip.jpg)
 
 从上图我们可以清晰的看到，TCP/UDP都是属于传输层的协议，也就是四层协议。 在本书中，由于ETCD都是采用的TCP的传输协议，
 所以在这里我们详细探讨下Go语言实现的TCP协议，以及如何利用net包进行TCP编程，这对后面理解etcd中的网络模型非常重要。
