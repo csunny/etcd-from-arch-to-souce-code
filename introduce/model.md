@@ -4,7 +4,7 @@
 
 一、 C/S模型
 
-![](\_asserts\images\c_s.jpg)
+![](https://github.com/csunny/etcd-from-arch-to-souce-code/tree/master/_asserts/images/c_s.jpg)
 
 当前占据主导地位的是非对称分布式系统，也就是系统之间不同的服务之间承担着不同的角色。
 典型的就是C/S架构模型: 客户端发送请求到服务器，服务接收请求进行响应。
