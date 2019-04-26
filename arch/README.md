@@ -18,7 +18,7 @@
 当然以上也仅仅是粗略的划分, 但也能大概说明问题。 这里我们结合上述架构图来解释各个模块的功能，以及一个完整的ETCD集群的工作流程。
 
 
-![](\_asserts\images\etcd_arch.jpg)
+![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/etcd_arch.jpg)
 
 下面是一个更为细致的划分，通过分层的方式，将etcd划分为4层，依次为表现层、网络层、应用层、数据层。
 
@@ -36,4 +36,4 @@
 磁盘里面存储的文件有三部分，一部分就是核心的数据文件，在snap下面的db文件中保存，还有就是raft协议依赖的wal日志文件
 和snap快照文件。
 
-![](\_asserts\images\arch_design.jpg)
+![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/arch_design.jpg)
