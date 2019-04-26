@@ -14,6 +14,7 @@ CAP原理最早出现在2000年，是加州大学伯克利分校（University of
 可用性(Avaliability) (每次请求都能获取到非错的响应——但是不保证获取的数据为最新数据)
 分区容错性（Partition tolerance）(以实际效果而言，分区相当于对通信的时限要求。系统如果不能在时限内达成数据一致性，就意味着发生了分区的情况，
 必须就当前操作在C和A之间作出选择)
+
 ![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/cap.jpg)
 
 根据定理, 分布式系统只能满足三项中的两项而不可能满足全部三项。理解CAP理论的最简单方式是想象两个节点分处分区两侧。 允许至少一个节点更新状态会导致数据不一致，
