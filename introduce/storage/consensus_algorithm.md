@@ -16,7 +16,7 @@
         - paxos
         - raft  
 
-![](\_asserts\images\consensus_algorithm.jpg)
+![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/consensus_algorithm.jpg)
 
 当然在这里，我们不打算介绍区块链领域里面的那些共识算法，感兴趣的同学，可以访问我的[github](https://github.com/csunny)来查看，在里面我有解释，
 以及具体的代码实现。本书中，我们只介绍raft共识算法。
