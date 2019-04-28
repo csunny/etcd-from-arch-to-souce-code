@@ -2,7 +2,7 @@
 
 前面简单介绍了分布式系统，这里重点介绍下分布式存储。 当然分布式存储也分为很多种类，在这里简单分为以下四类：
 
-![](\_asserts\images\dis_type_storage.jpg)
+![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/dis_type_storage.jpg)
 一、 分布式文件存储  
 分布式文件存储主要用来存储各类无结构数据，如文件，数据块等。系统以对象的形式组织，对象之间没有联系，这样的数据称为Blob，也就是二进制文件。 分布式文件存储一般都是将一个文件以
 chunk的形式切分为很多个小文件。 然后通过一致性hash以及其变种算法，将文件分别存放在不同的服务器磁盘上。 达到海量数据存储，备份的目的。 目前市面上使用的分布式文件存储系统已经
