@@ -14,6 +14,7 @@
 #### ISO OSI Protocol
 尽管OSI(Open Systems Interconnect)协议并没有完整实现，但OSI协议已经是事实上的通信标准协议。 
 
+
 ![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/osi_protocol.jpg)
 
 #### OSI层
