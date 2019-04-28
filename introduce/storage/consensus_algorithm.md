@@ -9,8 +9,8 @@
         - dpos (Delegated proof of stake)
         - ripple
     - 区块链联盟链
-            - pbft (Practical Byzantine Fault Tolerance）)
-            - dbft(Delegated Byzantine Fault Tolerant))
+        - pbft (Practical Byzantine Fault Tolerance）)
+        - dbft(Delegated Byzantine Fault Tolerant))
 - 内部网络
     - 分布式一致性系统
         - paxos
@@ -18,4 +18,5 @@
 
 ![](\_asserts\images\consensus_algorithm.jpg)
 
-在传统的分布式系统领域，最出名的就属Paxos协议和Raft协议了。 
+当然在这里，我们不打算介绍区块链领域里面的那些共识算法，感兴趣的同学，可以访问我的[github](https://github.com/csunny)来查看，在里面我有解释，
+以及具体的代码实现。本书中，我们只介绍raft共识算法。
