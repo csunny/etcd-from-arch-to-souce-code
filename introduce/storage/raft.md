@@ -86,13 +86,21 @@ raft实现共识算法首先选举一个leader，然后赋予leader完整的能�
 之后进行广播。通过Leader的方式可以简化副本日志的管理。 比如， leader可以在不经过跟其他节点共识的前提下决定将新的输入放入到日志的什么位置，并且数据的流向始终是从
 leader到其他服务器。Leader也可以失效或者与其他服务器失连，这种情况下，将会选举一个新的Leader节点。
 
+![](\_asserts\images\raft_2.jpg)
 通过Leader的方式，raft算法将一个共识问题，拆分成了三个相关的子问题
 - Leader 选举
 当系统中没有leader节点时，必须选举产生新的Leader
 - 日志副本
-Leader
+Leader必须从客户端接受日志的输入并将其复制到其他服务器。
+- 安全
+最关键的raft的安全特性是图三所示的状态机安全性。
 
+![](\_asserts\images\saft_raft.jpg)
 
+在展示了共识算法之后，下一部分讨论高可用以及不同时刻节点角色的转换。
+
+#### 5.1 Raft基础
+一个raft集群包含几个服务器。5个节点是最常见的数量，这样就可以容忍系统最多出现两个节点失效。
 
 ![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/state_machine.jpg)
 
