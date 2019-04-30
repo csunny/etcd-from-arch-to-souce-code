@@ -81,6 +81,17 @@ Paxos首次定义了一个可以就单一节点达成共识的协议。 比如�
 
 
 ### Raft 共识算法
+在第二部分的描述中，我们知道raft是一种管理副本日志的共识算法。 图二对共识算法做了一个概述。 图三列举了算法核心的特性。在后续的内容中，会逐个进行详细的讨论。
+raft实现共识算法首先选举一个leader，然后赋予leader完整的能力去管理日志副本。 leader接受客户端的输入，然后将其复制到其他服务器，并且当其将日志复制到其他服务器
+之后进行广播。通过Leader的方式可以简化副本日志的管理。 比如， leader可以在不经过跟其他节点共识的前提下决定将新的输入放入到日志的什么位置，并且数据的流向始终是从
+leader到其他服务器。Leader也可以失效或者与其他服务器失连，这种情况下，将会选举一个新的Leader节点。
+
+通过Leader的方式，raft算法将一个共识问题，拆分成了三个相关的子问题
+- Leader 选举
+当系统中没有leader节点时，必须选举产生新的Leader
+- 日志副本
+Leader
+
 
 
 ![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/state_machine.jpg)
