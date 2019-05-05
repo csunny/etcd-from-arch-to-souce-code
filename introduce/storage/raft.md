@@ -100,7 +100,7 @@ Leader必须从客户端接受日志的输入并将其复制到其他服务器�
 在展示了共识算法之后，下一部分讨论高可用以及不同时刻节点角色的转换。
 
 #### 5.1 Raft基础
-一个raft集群包含几个服务器。5个节点是最常见的数量，这样就可以容忍系统最多出现两个节点失效。
+一个raft集群包含几个服务器。5个节点是最常见的数量，这样就可以容忍系统最多出现两个节点失效。在一个集群中任意一个节点的角色只能是leader，flower或者candidate
 
 ![](https://raw.githubusercontent.com/csunny/etcd-from-arch-to-souce-code/master/_asserts/images/state_machine.jpg)
 
