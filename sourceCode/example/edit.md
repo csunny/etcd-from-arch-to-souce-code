@@ -1,12 +1,11 @@
-## 源码解析
+## 
+## 前言
 
-### 环境搭建
-
-前面已经提到，etcd是用Go语言开发的，所以在阅读源码之前需要搭建Go 语言的开发环境。
+  在第一节中，对IPFS下了很多定义，在第二节中又引入了很多概念。 对于一个技术人员来说，前面两节无疑是枯燥的。那么接下来，开始熟悉的节奏，开发环境搭建。
 
 ---
 
-#### 编辑器
+## 编辑器
 
    打出编辑器这三个字的时候，不自觉地，我打了个激灵(😓)。在程序员这个圈子里，对于编辑器的选择，就好像说“PHP是世界上最好的语言”一样。是个梗，而且一直争论不休，从未有谁能够完胜别人。 当然，我这里提编辑器，并不想争论各个编辑器的优劣。我只是介绍几种选择方案，以及我自己的开发环境。 
 
@@ -50,36 +49,7 @@ Vscode的安装
 
 Go语言安装
 
-##### Windows安装：
-
- 有两种安装方式，源码安装以及MSI安装，本文介绍以应用程序安装。
-- 首先下载相应的安装包：https://redirector.gvt1.com/edgedl/go/go1.11.2.windows-amd64.msi
-- 下载成功之后直接双击安装
-- 设置环境变量
-- 创建工作目录.   在User/Magic/go
-- 将工作目录也添加到环境变量
-   
-##### Mac安装：
--  下载pkg包安装
-https://redirector.gvt1.com/edgedl/go/go1.11.2.darwin-amd64.pkg
--  创建工作目录
->  mkdir -p /Users/magic/go
-
--  设置环境变量
-> export GOPATH=/Users/magic/go  
-> export GOBIN=`$`GOPATH/bin
-> export PATH=`$`PATH:/Users/magic/go/bin 
-    
-
-##### Linux安装：
-Linux下安装更加简单，设置环境变量的方式跟mac下基本一致。
-- Linux下之后可以用yum install go(CentOS).  apt-get install go (Ubuntu)
-- 设置环境变量
-  
-##### Git的安装：
-   
-- 关于Git的安装，直接访问:
-https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+ Go语言的安装这里就不仔细讲了，网上一大堆文章。另外在我的另一个专栏里面有一篇 [《Go语言环境搭建》](https://xiaozhuanlan.com/topic/8930542671) 如果对Go语言安装有问题的同学也可以看看。
 
 VsCode配置
 
@@ -111,17 +81,26 @@ VsCode上手非常容易，其实不需要做任何配置都可以玩的很溜�
 分屏 command+D   command+shift+D
 还有一些其他快捷键，自己可以摸索使用。这里就不一一列举啦。
 
-**ETCD代码下载**
-
-这里我们主要剖析etcd代码
+**IPFS代码下载**
+这里我们主要剖析go-ipfs代码
 如果之前安装了Go语言，直接使用go get进行下载
 
 ```
 // 下载代码
-cd $GOPATH/src/
-git clone https://github.com/etcd-io/etcd.git  go.etcd.io/etcd
+go get -u -d github.com/ipfs/go-ipfs 
+// 安装
+cd $GOPATH/src/github.com/ipfs/go-ipfs
+make install
+
 ```
-当然，由于etcd的源码是用go moduler进行依赖管理的，所以源码可以不用放在GOPATH路径下。源码下载完成，就可以直接运行代码了，如果要debug代码的话，
+
+这样IPFS的源码下载、安装就成功了。由于在IPFS中，代码的依赖管理是采用的gx，而不是目前使用官方的dep，所以对于之前使用dep管理依赖的同学，要调整下。 安装go-ipfs依赖包
+```
+go get -u github.com/whyrusleeping/gx
+```
+
+到这里，整个开发环境就准备的差不多了，接下来我们来运行一个简单的命令，并打个断点，debug个一把，作为本章内容的终结。
+
 在debug之前，需要安装一个go语言的库。
 ```
 go get github.com/derekparker/delv
@@ -147,7 +126,7 @@ Debug lanch 配置文件
             "env": {
                 "GOPATH": "/Users/magic/go"
             },
-            "args": [],
+            "args": ["ls", "QmfEE1CwpwfJcj54AAhz16HU3VkeUkP41Ta953Y1Evi3qb", "--resolve-type"],
             "showLog": true
         }
     ]
@@ -155,19 +134,15 @@ Debug lanch 配置文件
 
 ```
 
-执行F5 运行debug显示如下, 由此说明我们开发环境搭建ok，可以正常运行ETCD代码，进行debug。
+执行F5 运行debug显示如下, 由此说明我们开发环境搭建ok，可以正常运行IPFS代码，进行debug。
+![](https://diycode.b0.upaiyun.com/photo/2018/1bc2832fd30b6fcb03be89eb9a5d5e91.png)
 
-以上，我们就搭建好了etcd的开发环境。 后面我们会在这个环境中进行代码的调试与源码分析。
+以上，我们就搭建好了go-ipfs的开发环境。 后面我们会在这个环境中进行代码的调试与源码分析。
+
+
+## 参考
+- [gx依赖管理](https://github.com/whyrusleeping/gx)
 
 
 
-#### 项目地址
-- https://github.com/csunny/etcd-from-arch-to-souce-code
 
-#### 参考文章:
- 
- - Docker安装: https://docs.docker.com/engine/installation/#time-based-release-schedule 
- - Go安装:  https://golang.org/doc/install    
- - Git:https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
- - VScode: https://code.visualstudio.com/
- - Sublime:    https://www.sublimetext.com/
