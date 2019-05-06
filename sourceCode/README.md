@@ -60,7 +60,6 @@ Go语言安装
 - 将工作目录也添加到环境变量
    
 ##### Mac安装：
-
 -  下载pkg包安装
 https://redirector.gvt1.com/edgedl/go/go1.11.2.darwin-amd64.pkg
 -  创建工作目录
@@ -73,7 +72,6 @@ https://redirector.gvt1.com/edgedl/go/go1.11.2.darwin-amd64.pkg
     
 
 ##### Linux安装：
-
 Linux下安装更加简单，设置环境变量的方式跟mac下基本一致。
 - Linux下之后可以用yum install go(CentOS).  apt-get install go (Ubuntu)
 - 设置环境变量
@@ -88,7 +86,6 @@ VsCode配置
 VsCode上手非常容易，其实不需要做任何配置都可以玩的很溜。当然，为了进一步提高开发效率，所以还是可以做一些必要的配置。 
 
 **插件安装**
-
 安装完成打开vscode， 点击左侧栏目的红色序号标注的1，然后在搜索框搜索Go，然后第一个就是Vscode的go语言插件，如果未安装，右侧序号2会是Install，点击安装即可。序号3区域是对此插件的介绍，以及其默认的一些配置和快捷键。
 
 除了Go插件，开发Go语言还需要以下插件
@@ -104,7 +101,6 @@ VsCode上手非常容易，其实不需要做任何配置都可以玩的很溜�
 
 ![](https://diycode.b0.upaiyun.com/photo/2018/e03b4c4e69771bc2c82a7767c6278d3b.png)
 **快捷键设置**
-
 在VSCode中快捷键的设置相当重要。 查寻快捷键的命令command+shift+p, 修改快捷键command+k,command+s 然后调出修改快捷键的文件，根据自己喜好修改即可。
 
 常见的快捷键
