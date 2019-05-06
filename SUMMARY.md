@@ -23,7 +23,7 @@
         * [命令行](arch/presentation/command.md)
     * [网络层](arch/network/README.md)
         * [Proxy代理](arch/network/proxy.md)
-        * [SDK](arch/network/sdb.md)
+        * [SDK](arch/network/sdk.md)
     * [应用层](arch/logic/README.md)
         * [Raft协议](arch/logic/raft.md)
         * [复制状态机](arch/logic/state_machine.md)
