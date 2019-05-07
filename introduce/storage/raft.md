@@ -106,3 +106,4 @@ Leader必须从客户端接受日志的输入并将其复制到其他服务器�
 
 #### 参考
 - [raft](https://raft.github.io)
+- [raft动画](http://thesecretlivesofdata.com/raft/)
